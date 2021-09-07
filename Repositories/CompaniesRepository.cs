@@ -18,13 +18,13 @@ namespace contracted.Repositories
 
     internal List<Company> Get()
     {
-      string sql = "SELECT * FROM artists";
+      string sql = "SELECT * FROM companies";
       return _db.Query<Company>(sql).ToList();
     }
 
     internal Company Get(int id)
     {
-      string sql = "SELECT * FROM artists WHERE id = @id";
+      string sql = "SELECT * FROM companies WHERE id = @id";
       return _db.QueryFirstOrDefault<Company>(sql, new { id });
     }
 
