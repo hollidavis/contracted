@@ -1,6 +1,6 @@
 namespace contracted.Services
 {
-    public class ContractorService
+    public class ContractorsService
     {
         
     }
