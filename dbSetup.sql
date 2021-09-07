@@ -6,3 +6,19 @@ CREATE TABLE IF NOT EXISTS accounts(
   email varchar(255) COMMENT 'User Email',
   picture varchar(255) COMMENT 'User Picture'
 ) default charset utf8 COMMENT '';
+
+CREATE TABLE companies (
+  id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
+  name varchar(255) NOT NULL COMMENT 'company name'
+)
+
+CREATE TABLE contractors (
+  id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
+  name varchar(255) NOT NULL COMMENT 'contractor name'
+)
+
+CREATE TABLE jobs (
+  id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
+  FOREIGN KEY (contractorId) REFERENCES contractors(id) ON DELETE CASCADE,
+  FOREIGN KEY (companyId) REFERENCES companies(id) ON DELETE CASCADE
+)
