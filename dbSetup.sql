@@ -8,17 +8,19 @@ CREATE TABLE IF NOT EXISTS accounts(
 ) default charset utf8 COMMENT '';
 
 CREATE TABLE companies (
-  id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
+  id int NOT NULL primary key AUTO_INCREMENT comment 'primary key',
   name varchar(255) NOT NULL COMMENT 'company name'
-)
+) default charset utf8 comment '';
 
 CREATE TABLE contractors (
-  id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
+  id int NOT NULL primary key AUTO_INCREMENT comment 'primary key',
   name varchar(255) NOT NULL COMMENT 'contractor name'
-)
+) default charset utf8 comment '';
 
 CREATE TABLE jobs (
   id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
+  contractorId int NOT NULL,
+  companyId int NOT NULL,
   FOREIGN KEY (contractorId) REFERENCES contractors(id) ON DELETE CASCADE,
   FOREIGN KEY (companyId) REFERENCES companies(id) ON DELETE CASCADE
-)
+) default charset utf8 comment '';
