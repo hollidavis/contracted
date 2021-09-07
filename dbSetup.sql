@@ -18,7 +18,7 @@ CREATE TABLE contractors (
 ) default charset utf8 comment '';
 
 CREATE TABLE jobs (
-  id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
+  id int NOT NULL primary key AUTO_INCREMENT comment 'primary key',
   contractorId int NOT NULL,
   companyId int NOT NULL,
   FOREIGN KEY (contractorId) REFERENCES contractors(id) ON DELETE CASCADE,

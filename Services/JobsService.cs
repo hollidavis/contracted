@@ -30,8 +30,6 @@ namespace contracted.Services
     {
       return _repo.Create(newJob);
     }
-
-
     internal void Delete(int id)
     {
       Job job = _repo.Get(id);
