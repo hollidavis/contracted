@@ -1,10 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using contracted.Models;
 using contracted.Services;
-using CodeWorks.Auth0Provider;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace contracted.Controllers
